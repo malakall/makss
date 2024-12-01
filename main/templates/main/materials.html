@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Материалы</title>
+</head>
+<body>
+    <h1>Коллекция материалов</h1>
+    <p>хз че тут писать можно скрин вставить о выполненной работе хз</p>
+    <ul>
+        {% for material in materials %}
+        <li>
+            <strong>{{ material.title }}</strong>: {{ material.description }}
+            (<a href="{{ material.link }}">Ссылка</a>)
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Назад на главную</a>
+</body>
+</html>

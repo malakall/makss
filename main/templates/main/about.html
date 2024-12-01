@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>О создателях</title>
+</head>
+<body>
+    <h1>О создателях сайта</h1>
+    <p>я масенчка с первого курса вуза ... .</p>
+    <ul>
+        {% for author in authors %}
+        <li><strong>{{ author.name }}</strong>: {{ author.bio }} ({{ author.contact }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Назад на главную</a>
+</body>
+</html>
