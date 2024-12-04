@@ -3,12 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .welcome-text, .info-text {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-text p, .info-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
     <h1>Добро пожаловать на сайт!</h1>
-    <p>Здесь вы найдете информацию о нашей тематике моего проекта по инфе (сюда твои инфу полодить).</p>
-    <a href="{% url 'about' %}">О создателях</a> | 
-    <a href="{% url 'materials' %}">Материалы</a> | 
-    <a href="{% url 'resources' %}">Ресурсы</a>
+
+    <div class="welcome-text">
+        <p>Здесь Вы можете ознакомиться с тематикой нашего проекта.</p>
+    </div>
+
+    <div class="info-text">
+        <p>
+            Диаграммы Эйлера (круги Эйлера) — геометрическая схема, с помощью которой можно изобразить отношения между подмножествами, 
+            для наглядного представления.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <video controls>
+            <source src="{% static 'images/video.mp4' %}" type="video/mp4">
+            Ваш браузер не поддерживает воспроизведение видео.
+        </video>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'about' %}">О создателях</a> | 
+        <a href="{% url 'materials' %}">Материалы</a> | 
+        <a href="{% url 'resources' %}">Ресурсы</a>
+    </div>
+
 </body>
 </html>

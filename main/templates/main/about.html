@@ -1,17 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>О создателях</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .authors-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .author {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 48%;
+        }
+        .author-info {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        .author img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .nav-links a:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        .nav-links a:active {
+            background-color: #1f6f97;
+            transform: translateY(2px);
+        }
+    </style>
 </head>
 <body>
     <h1>О создателях сайта</h1>
-    <p>я масенчка с первого курса вуза ... .</p>
-    <ul>
-        {% for author in authors %}
-        <li><strong>{{ author.name }}</strong>: {{ author.bio }} ({{ author.contact }})</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'home' %}">Назад на главную</a>
+
+    <div class="authors-container">
+        <div class="author">
+            <div class="author-info">
+                <strong>Ткачева Мария Сергеевна</strong><br>
+                Окончила: Государственное бюджетное образовательное учреждение города Москвы «Школа №2127»<br>
+                Студентка МПГУ 1-го курса математического факультета
+            </div>
+            <img src="{% static 'images/women.png' %}" alt="Ткачева Мария Сергеевна">
+        </div>
+
+        <div class="author">
+            <div class="author-info">
+                <strong>Самороков Максим Алексеевич</strong><br>
+                Дата рождения: 11.09.2006<br>
+                Окончил: Государственное бюджетное образовательное учреждение города Москвы «Инженерная школа №1581»<br>
+                Студент МПГУ 1-го курса математического факультета
+            </div>
+            <img src="{% static 'images/man.png' %}" alt="Самороков Максим Алексеевич">
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Назад на главную</a>
+    </div>
 </body>
 </html>

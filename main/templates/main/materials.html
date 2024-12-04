@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Материалы</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .materials-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .material-item {
+            margin-bottom: 15px;
+        }
+        .material-item a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .material-item a:hover {
+            text-decoration: underline;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #3498db;
+        }
+    </style>
 </head>
 <body>
     <h1>Коллекция материалов</h1>
-    <p>хз че тут писать можно скрин вставить о выполненной работе хз</p>
-    <ul>
-        {% for material in materials %}
-        <li>
-            <strong>{{ material.title }}</strong>: {{ material.description }}
-            (<a href="{{ material.link }}">Ссылка</a>)
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'home' %}">Назад на главную</a>
+
+    <div class="materials-container">
+        <p>Здесь представлены материалы для работы с проектом. Вы можете перейти по ссылкам ниже для изучения.</p>
+        
+        <ul>
+            {% for material in materials %}
+            <li class="material-item">
+                <strong>{{ material.title }}</strong>: {{ material.description }}
+                (<a href="{{ material.link }}" target="_blank">Ссылка</a>)
+                
+                {% if material.document %}
+                    <!-- Добавление ссылки для скачивания документа -->
+                    <br><a href="{{ material.document.url }}" class="download-link" download>Скачать документ</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'home' %}" class="back-button">Назад на главную</a>
+    </div>
+
 </body>
 </html>

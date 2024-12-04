@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Ресурсы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .nav-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .nav-links a:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        .nav-links a:active {
+            background-color: #1f6f97;
+            transform: translateY(2px);
+        }
+        ul {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        ul li a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Полезные ресурсы</h1>
-    <p>Сюда ссылку и я все спиздил с чат гпт сам нихуя не знаю .</p>
+    <p>Сюда можно перейти по следующим ссылкам для дальнейшего изучения темы диаграмм Эйлера и других математических понятий:</p>
     <ul>
-        <li><a href="https://example.com">Пример ресурса 1</a></li>
-        <li><a href="https://example2.com">Пример ресурса 2</a></li>
+        <li><a href="https://ru.wikipedia.org/wiki/Диаграмма_Эйлера" target="_blank">Диаграмма Эйлера - Википедия</a></li>
+        <li><a href="https://www.yaklass.ru/p/veroyatnost-i-statistika/8-klass/mnozhestva-7337042/svoistva-operatcii-nad-mnozhestvami-graficheskoe-predstavlenie-mnozhestv-7325444/re-c3cbbe5c-a231-490f-bbb1-47894769c5ad" target="_blank">Свойства операций над множествами: графическое представление множества - Yaklass</a></li>
+        <li><a href="https://www.yaklass.ru/p/algebra/11-klass/nachalnye-svedeniia-teorii-veroiatnostei-9277/kombinatcii-sobytii-protivopolozhnye-sobytiia-12795/re-34c9ce19-b671-4b62-98ab-f8b6fc3306b2" target="_blank">Комбинаторика событий: противоположные события - Yaklass</a></li>
     </ul>
-    <a href="{% url 'home' %}">Назад на главную</a>
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Назад на главную</a>
+    </div>
 </body>
 </html>

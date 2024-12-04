@@ -28,6 +28,21 @@ DEBUG = True
 ALLOWED_HOSTS = ['makstest-deniska111.amvera.io', '8080', '127.0.0.1']
 
 
+# settings.py
+
+STATIC_URL = '/static/'  # URL для доступа к статическим файлам
+
+# Убедитесь, что у вас есть настройка для загрузки статических файлов в папку
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Путь к вашей папке статических файлов
+]
+
+# Для продакшн-окружения
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Для collectstatic, если используете
+
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
