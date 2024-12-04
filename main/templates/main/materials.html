@@ -53,20 +53,21 @@
     <h1>Коллекция материалов</h1>
 
     <div class="materials-container">
-        <p>Здесь представлены материалы для работы с проектом. Вы можете перейти по ссылкам ниже для изучения.</p>
+        <p>Здесь представлены материалы для работы с проектом. Вы можете перейти по ссылкам ниже для изучения или скачивания.</p>
         
         <ul>
-            {% for material in materials %}
             <li class="material-item">
-                <strong>{{ material.title }}</strong>: {{ material.description }}
-                (<a href="{{ material.link }}" target="_blank">Ссылка</a>)
-                
-                {% if material.document %}
-                    <!-- Добавление ссылки для скачивания документа -->
-                    <br><a href="{{ material.document.url }}" class="download-link" download>Скачать документ</a>
-                {% endif %}
+                <strong>Документ DOCX</strong>: Пример текстового документа
+                (<a href="{% static 'documents/dd.docx' %}" target="_blank">Открыть</a>)
+                <br>
+                <a href="{% static 'documents/dd.docx' %}" class="download-link" download>Скачать документ</a>
             </li>
-            {% endfor %}
+            <li class="material-item">
+                <strong>Документ PPTX</strong>: Пример презентации
+                (<a href="{% static 'documents/самороков, слайд-шоу.pptx' %}" target="_blank">Открыть</a>)
+                <br>
+                <a href="{% static 'documents/самороков, слайд-шоу.pptx' %}" class="download-link" download>Скачать документ</a>
+            </li>
         </ul>
 
         <a href="{% url 'home' %}" class="back-button">Назад на главную</a>
